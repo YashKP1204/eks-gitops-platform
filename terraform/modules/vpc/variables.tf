@@ -33,3 +33,6 @@ variable "private_cidr" {
   description = "CIDR range for private subnet"
   default     = ["10.0.11.0/24", "10.0.12.0/24"]
 }
+
+
+

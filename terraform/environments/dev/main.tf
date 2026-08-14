@@ -1,12 +1,11 @@
-resource "aws_vpc" "main" {
 
-  cidr_block          = var.vpc_cidr
-  enable_dns_support  = true
-  enable_dns_hostnames = true
+module "vpc" {
+  source = "../../modules/vpc"
 
-  tags = {
-    Name        = local.vpc_name
-    Environment = var.environment
-    Project     = var.project_name
-  }
+  aws_region       = var.aws_region
+  project_name     = var.project_name
+  environment      = var.environment
+  vpc_cidr         = var.vpc_cidr
+  public_cidr      = var.public_cidr
+  private_cidr     = var.private_cidr
 }
